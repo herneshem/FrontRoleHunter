@@ -1,0 +1,80 @@
+//MENU
+.navbar {
+    .navbar-nav {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .register {
+
+        ul {
+            display: flex;
+
+            li {
+                padding: 0 .5rem;
+            }
+        }
+    }
+}
+
+.bodyhome {
+    img {
+        width: 50rem;
+        height: 10rem;
+    }
+
+}
+
+//ACTOR
+.bodyroom1 {
+    height: calc(100% - 6rem);
+    background-color: rgb(59, 53, 53);
+    padding: 2rem;
+
+}
+
+//FORMULARIO
+
+.userScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 6rem);
+
+    .centered {
+        max-width: 35rem;
+        position: relative;
+        padding: 1.25rem;
+        width: 100%;
+        margin: 0 auto;
+
+        .content {
+            text-align: center;
+            text-wrap: balance;
+
+            .boxbig {
+                text-align: center;
+                text-wrap: balance;
+                overflow: hidden;
+                position: relative;
+                background: #fff;
+                border-radius: var(--rounded_corners_radius_fatter);
+                border: solid hsl(from var(--neutral_1) h s l / 0.15) 1px;
+                box-shadow: 0 5px 8px hsl(from var(--neutral_1) h s l / 0.06);
+
+                .content {
+                    padding: 10px;
+                    overflow: hidden;
+
+                    input{
+                        width: 100%;
+                        margin-bottom: .625rem;
+                        padding: .5rem;
+                        border-radius: .5rem;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
