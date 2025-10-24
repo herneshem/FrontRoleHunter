@@ -1,0 +1,42 @@
+<div class="userScreen">
+	<div class="centered">
+		<div class="content">
+			<div class="boxbig">
+				<div class="content">
+
+
+					 <form action="" [formGroup]="inscription" (ngSubmit)="newhandleSend()">
+						<div class="form-control">
+							<label for="name">Nombre</label>
+							<input type="text" id="name" formControlName="name">
+						</div>
+						<div class="form-control">
+							<label for="passw">Password</label>
+							<input type="text" id="passw" formControlName="passw">
+						</div>
+						<div class="form-control">
+							<label for="confirm">Confirm</label>
+							<input type="text" id="confirm" formControlName="confirm">
+						</div>
+						<div>
+							<button>Send</button>
+						</div>
+					</form> 
+				
+				</div>
+			</div>
+
+			<div class="buttons vertical centered">
+
+				<a href="/signup" class="simpleButton">
+					<div class="title">Regístrate si no tienes cuenta</div>
+				</a>
+
+				<a href="/password_recall" class="simpleButton">
+					<div class="title">¿Tienes problemas para acceder?</div>
+				</a>
+
+			</div>
+		</div>
+	</div>
+</div>
