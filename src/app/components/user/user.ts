@@ -17,17 +17,17 @@ name = new FormControl('');
    formu = this.formBuilder.group({
     name: ['', [Validators.required]],
     passw: ['', [Validators.required]],
-    confirm: ['', [Validators.required]]
+    
   })
  
 
       handleSend() {
 
     if (this.formu.valid) {
-      const data = this.formu.value;
-      console.log('Enviando datos:', data);
+      const {name, passw} = this.formu.value;
+      console.log('Enviando datos:', {name, passw}); 
 
-      this.userServ.createUser(data).subscribe({
+      this.userServ.loginUser({name, passw}).subscribe({
         next: (response) => {
           console.log('Respuesta del backend:', response);
         },

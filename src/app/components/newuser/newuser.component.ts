@@ -15,6 +15,7 @@ export class NewuserComponent {
 
   inscription = this.formBuilder.group({
     name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
     passw: ['', [Validators.required]],
     confirm: ['', [Validators.required]]
   })
