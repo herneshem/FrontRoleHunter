@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class Servform {
 
-    private ApiConsumer = "http://localhost:8080"
+    private ApiConsumer = "http://localhost:8080/usuarios"
 
   constructor(private http : HttpClient) { }
 
