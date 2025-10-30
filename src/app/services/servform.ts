@@ -12,11 +12,11 @@ export class Servform {
   constructor(private http : HttpClient) { }
 
   createUser(userData: any){
-    return this.http.post(`${this.ApiConsumer}/newuser`, userData);
+    return this.http.post(`${this.ApiConsumer}/newuser`, userData);//VA AL ENDPOINT DEL BACK
   }
   
   loginUser(credentials: any): Observable<any> {
-    return this.http.post(`${this.ApiConsumer}/user`, credentials);
+    return this.http.post(`${this.ApiConsumer}/user`, credentials);//VA AL ENDPOINT DEL BACK
   }
   
 }
