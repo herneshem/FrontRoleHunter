@@ -10,7 +10,7 @@ import { Servform } from '../../services/servform';
 })
 export class NewuserComponent {
   name = new FormControl('');
- private userServ = inject(Servform);
+  private userServ = inject(Servform);
   private formBuilder = inject(FormBuilder);
 
   inscription = this.formBuilder.group({
@@ -22,9 +22,9 @@ export class NewuserComponent {
   })
 
 
- 
+
   /* PARA NUEVO SUSARIO*/
-    newhandleSend() {
+  newhandleSend() {
 
     if (this.inscription.valid) {
       const data = this.inscription.value;
@@ -33,6 +33,8 @@ export class NewuserComponent {
       this.userServ.createUser(data).subscribe({
         next: (response) => {
           console.log('Respuesta del backend:', response);
+          this.inscription.reset();
+
         },
         error: (err) => {
           console.error('Error al enviar:', err);
@@ -41,6 +43,7 @@ export class NewuserComponent {
     } else {
       console.warn('Formulario inválido');
     }
-    console.log(this.inscription)
+
+
   }
 }
