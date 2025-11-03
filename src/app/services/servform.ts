@@ -16,7 +16,7 @@ export class Servform {
   }
   
   loginUser(credentials: any): Observable<any> {
-    return this.http.post(`${this.ApiConsumer}/user`, credentials);//VA AL ENDPOINT DEL BACK
+    return this.http.post(`${this.ApiConsumer}/login`, credentials);//VA AL ENDPOINT DEL BACK
   }
   
 }

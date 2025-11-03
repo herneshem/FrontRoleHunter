@@ -21,6 +21,9 @@ export class NewuserComponent {
     confirm: ['', [Validators.required]]
   })
 
+
+ 
+  /* PARA NUEVO SUSARIO*/
     newhandleSend() {
 
     if (this.inscription.valid) {

@@ -1,33 +1,33 @@
-import { Component, inject  } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Servform } from '../../services/servform';
 
 @Component({
   selector: 'app-userComponent',
-  standalone:true,
+  standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './userComponent.html',
   styles: ``
 })
 export class UserComponent {
-name = new FormControl('');
- private userServ = inject(Servform);
+  name = new FormControl('');
+  private userServ = inject(Servform);
   private formBuilder = inject(FormBuilder);
 
-   formu = this.formBuilder.group({
-    name: ['', [Validators.required]],
-    passw: ['', [Validators.required]],
-    
-  })
- 
+  formu = this.formBuilder.group({
+    nombre: ['', [Validators.required]],
+    password: ['', [Validators.required]],
 
-      handleSend() {
+  })
+
+
+  handleSend() {
 
     if (this.formu.valid) {
-      const {name, passw} = this.formu.value;
-      console.log('Enviando datos:', {name, passw}); 
+      const { nombre, password } = this.formu.value;
+      console.log('Enviando datos:', { nombre, password });
 
-      this.userServ.loginUser({name, passw}).subscribe({
+      this.userServ.loginUser({ nombre, password }).subscribe({
         next: (response) => {
           console.log('Respuesta del backend:', response);
         },
