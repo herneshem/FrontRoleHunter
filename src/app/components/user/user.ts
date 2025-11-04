@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Servform } from '../../services/servform';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userComponent',
@@ -10,9 +11,14 @@ import { Servform } from '../../services/servform';
   styles: ``
 })
 export class UserComponent {
+
+
   name = new FormControl('');
   private userServ = inject(Servform);
   private formBuilder = inject(FormBuilder);
+  private router: Router = inject(Router);
+
+
 
   formu = this.formBuilder.group({
     nombre: ['', [Validators.required]],
@@ -30,6 +36,9 @@ export class UserComponent {
       this.userServ.loginUser({ nombre, password }).subscribe({
         next: (response) => {
           console.log('Respuesta del backend:', response);
+           localStorage.setItem('user', JSON.stringify(response)); 
+          this.router.navigate(['/']);
+          this.formu.reset();
         },
         error: (err) => {
           console.error('Error al enviar:', err);
@@ -40,6 +49,9 @@ export class UserComponent {
     }
     console.log(this.formu)
   }
+
+
+
 }
 
 

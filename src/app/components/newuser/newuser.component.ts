@@ -9,6 +9,7 @@ import { Servform } from '../../services/servform';
   styles: ``
 })
 export class NewuserComponent {
+  
   name = new FormControl('');
   private userServ = inject(Servform);
   private formBuilder = inject(FormBuilder);
@@ -16,7 +17,7 @@ export class NewuserComponent {
   inscription = this.formBuilder.group({
     nombre: ['', [Validators.required]],
     apellido: ['', [Validators.required]],
-    correo: ['', [Validators.required]],
+    correo: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
     confirm: ['', [Validators.required]]
   })
@@ -46,4 +47,6 @@ export class NewuserComponent {
 
 
   }
+
+
 }

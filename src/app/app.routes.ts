@@ -13,4 +13,6 @@ export const routes: Routes = [
   { path: 'newuser', component: NewuserComponent },
   { path: 'actor', component: Sala1 }
 
+  
+
 ];

@@ -11,6 +11,8 @@ export class Servform {
 
   constructor(private http : HttpClient) { }
 
+
+
   createUser(userData: any){
     return this.http.post(`${this.ApiConsumer}/newuser`, userData);//VA AL ENDPOINT DEL BACK
   }
