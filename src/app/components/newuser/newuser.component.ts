@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Servform } from '../../services/servform';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-newuser',
-  imports: [ReactiveFormsModule],
+  standalone:true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './newuser.component.html',
   styles: ``
 })

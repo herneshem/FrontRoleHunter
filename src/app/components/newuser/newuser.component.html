@@ -16,7 +16,8 @@
 						</div>
                         <div class="form-control">
 							<label for="correo">Correo</label>
-							<input type="text" id="email" formControlName="correo">
+							<input type="email" id="correo" formControlName="correo">
+							<div *ngIf="inscription.get('correo')?.invalid && inscription.get('correo')?.touched" style="color: red;">Invalid</div>
 						</div>
 						<div class="form-control">
 							<label for="password">Password</label>

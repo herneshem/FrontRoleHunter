@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Servform } from '../../services/servform';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-userComponent',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './userComponent.html',
   styles: ``
 })
@@ -41,6 +41,7 @@ export class UserComponent {
           this.formu.reset();
         },
         error: (err) => {
+          alert("Usario no existente")
           console.error('Error al enviar:', err);
         }
       });
