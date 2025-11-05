@@ -9,9 +9,47 @@
   padding: 0 0.5rem;
 }
 
-.bodyhome img {
-  width: 50rem;
-  height: 10rem;
+.bodyhome {
+  padding: 0.25rem;
+  height: 100%;
+  width: 100%;
+}
+.bodyhome .sections {
+  height: 15rem;
+  background-color: rgb(162, 199, 204);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.bodyhome .sections .sec {
+  border: solid 0.1px;
+}
+.bodyhome .space {
+  padding: 2rem 0;
+  text-align: center;
+  max-width: 40rem;
+  margin: auto;
+  height: 15rem;
+}
+.bodyhome .space h2 {
+  color: rgb(69, 69, 228);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.bodyhome .imagesall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.bodyhome .imagesall .card {
+  overflow: hidden;
+  margin: auto;
+  max-width: 25rem;
+  width: 20rem;
+}
+.bodyhome .imagesall .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 18rem;
 }
 
 .bodyroom1 {

@@ -37,7 +37,7 @@ export class UserComponent {
         next: (response) => {
           console.log('Respuesta del backend:', response);
            localStorage.setItem('user', JSON.stringify(response)); 
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
           this.formu.reset();
         },
         error: (err) => {

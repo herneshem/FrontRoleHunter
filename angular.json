@@ -22,7 +22,7 @@
               {
                 "glob": "**/*",
                 "input": "src/app/images",
-                "output": "/assets/images"
+                "output": "assets/images"
               },
               {
                 "glob": "**/*",

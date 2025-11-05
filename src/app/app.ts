@@ -5,6 +5,7 @@ import { Sala1 } from './components/sala1/sala1';
 
 
 
+
 @Component({
   selector: 'app-root',
   standalone:true,
