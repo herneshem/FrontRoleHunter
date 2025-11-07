@@ -21,4 +21,8 @@ export class Servform {
     return this.http.post(`${this.ApiConsumer}/login`, credentials);//VA AL ENDPOINT DEL BACK
   }
   
+   deleteUser(id_Usuario: number){
+    return this.http.delete(`${this.ApiConsumer}/${id_Usuario}`)
+  }
+  
 }

@@ -29,11 +29,30 @@
 					<div class="title"> <a [routerLink]="['/newuser']"> Regístrate si no tienes cuenta</a></div>
 				</a>
 
-				<a href="/password_recall" class="simpleButton">
-					<div class="title">¿Tienes problemas para acceder?</div>
+				<a href="" class="simpleButton">
+					<div class="title" a [routerLink]="['/user']">¿Tienes problemas para acceder?</div>
+				</a>
+
+				<a href="#deleteUser" class="simpleButton">
+					<div class="title" a [routerLink]="['/user']">Eliminar Usuario</div>
 				</a>
 
 			</div>
+
+
+			<div class="deleteUser" id="deleteUser">
+				<form [formGroup]="deleteForm" (ngSubmit)="deleteUser()">
+				<h2>Eliminar usuario</h2>
+				<div class="form-control">
+					 <label for="nombre">Identifícate</label>
+					<input type="text" id="nombre" formControlName="nombre"> 
+					<label for="id_Usuario">Id secreto</label>
+					<input type="text" id="id_Usuario" formControlName="id_Usuario">
+				</div>
+				<button type="submit">Eliminar</button>
+			</form>
+			</div>
+			
 		</div>
 	</div>
 </div>

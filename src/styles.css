@@ -93,4 +93,39 @@
   margin-bottom: 0.625rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+}
+.userScreen .centered .content .deleteUser {
+  border: solid 0.1rem;
+  padding: 1rem;
+}
+
+.proyectos .card {
+  width: 45rem;
+  margin: 2rem auto;
+  display: flex;
+  overflow: hidden;
+}
+.proyectos .card img {
+  height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #a2a2a2;
+}
+.proyectos .card .card-body {
+  text-align: center;
+  background-color: #e9fbfb;
+}
+.proyectos .card .datesproyect {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  padding: 3rem;
+  text-align: center;
+}
+.proyectos .card .description {
+  padding: 1rem 3rem;
+  border: solid 0.01rem;
+  border-color: #e9fbfb;
+  border-top-color: #a2a2a2;
+  border-top: solid 0.01rem;
 }/*# sourceMappingURL=styles.css.map */
