@@ -2,25 +2,25 @@
     <div class="card">
         <img src="assets/images/home.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
+            <h5 class="card-title " >{{proyecto.titulo}}</h5>
+            <p class="card-text">Descripcion del proyecto.</p>
         </div>
         <div class="datesproyect">
             <div class="searchar">
-                <h6>Datos del proyecto</h6>
+                <h5>Datos del proyecto</h5>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Publicado el 6 de Noviembre de 2025</li>
-                    <li class="list-group-item">Madrid, a Coruña, asturias y 2+</li>
-                    <li class="list-group-item">Trabajo remunerado económicamente</li>
+                    <li class="list-group-item" ><strong>Fecha: </strong>{{ proyecto.fecha }}</li>
+                    <li class="list-group-item" ><strong>Lugar: </strong>{{proyecto.lugar}}</li>
+                    <li class="list-group-item" ><strong>Remunerado: </strong>{{proyecto.remunerado}}</li>
+
                 </ul>
             </div>
             <div class="discoverart">
-                <h6>Datos del artista</h6>
+                <h5>Datos del artista</h5>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Sólo para mujeres</li>
-                    <li class="list-group-item">Sin requisitos de altura</li>
-                    <li class="list-group-item">Entre 18 y 32 años</li>
+                    <li class="list-group-item" ><strong>Sexo: </strong>{{proyecto.sexartist}}</li>
+                    <li class="list-group-item"><strong>Altura: </strong>{{proyecto.altura}}</li>
+                    <li class="list-group-item"><strong>Edad: </strong>{{proyecto.edad}}</li>
                 </ul>
             </div>
         </div>
@@ -43,11 +43,7 @@
             Se firmará un contrato de cesión de derechos de imagen claro y profesional (modelo estándar, con detalles
             sobre usos exclusivos y duración).<br>
             <br>
-            Requisitos:<br>
-            <br>
-            18 a 32 años.<br>
-            Puntualidad y compromiso.<br>
-            Flexibilidad para desplazarse.<div class="pills margin_top_double"></div>
+           <div class="pills margin_top_double"></div>
         </div>
     </div>
-</div>
+

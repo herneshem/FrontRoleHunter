@@ -122,10 +122,16 @@
   padding: 3rem;
   text-align: center;
 }
+.proyectos .card .datesproyect h5 {
+  color: rgb(180, 42, 7);
+}
 .proyectos .card .description {
   padding: 1rem 3rem;
   border: solid 0.01rem;
   border-color: #e9fbfb;
   border-top-color: #a2a2a2;
   border-top: solid 0.01rem;
+}
+.proyectos .card li {
+  list-style: none;
 }/*# sourceMappingURL=styles.css.map */

@@ -156,6 +156,9 @@
         gap: 5rem;
         padding: 3rem;
         text-align: center;
+        h5{
+            color: rgb(180, 42, 7);
+        }
        }
        .description{
         padding: 1rem 3rem;
@@ -163,6 +166,9 @@
         border-color: #e9fbfb;
         border-top-color: #a2a2a2;
         border-top:solid .01rem;
+       }
+       li{
+        list-style: none;
        }
     }
 }
