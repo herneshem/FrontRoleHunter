@@ -3,14 +3,21 @@ import { UserComponent } from './components/user/user';
 import { App } from './app';
 import { Sala1 } from './components/sala1/sala1';
 import { NewuserComponent } from './components/newuser/newuser.component';
+import { Home } from './components/home/home';
+import { Proyect } from './components/proyect/proyect';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'user', pathMatch: 'full' },
 
+  { path: 'home', component: Home },
+
+  { path: 'proyect', component: Proyect },
 
   { path: 'user', component: UserComponent },
 
   { path: 'newuser', component: NewuserComponent },
+
   { path: 'actor', component: Sala1 }
+
 
 ];

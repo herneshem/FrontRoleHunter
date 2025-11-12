@@ -1,27 +1,33 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Servform } from '../../services/servform';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-newuser',
-  imports: [ReactiveFormsModule],
+  standalone:true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './newuser.component.html',
   styles: ``
 })
 export class NewuserComponent {
+  
   name = new FormControl('');
- private userServ = inject(Servform);
+  private userServ = inject(Servform);
   private formBuilder = inject(FormBuilder);
 
   inscription = this.formBuilder.group({
     nombre: ['', [Validators.required]],
     apellido: ['', [Validators.required]],
-    correo: ['', [Validators.required]],
+    correo: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
     confirm: ['', [Validators.required]]
   })
 
-    newhandleSend() {
+
+
+  /* PARA NUEVO SUSARIO*/
+  newhandleSend() {
 
     if (this.inscription.valid) {
       const data = this.inscription.value;
@@ -30,6 +36,8 @@ export class NewuserComponent {
       this.userServ.createUser(data).subscribe({
         next: (response) => {
           console.log('Respuesta del backend:', response);
+          this.inscription.reset();
+
         },
         error: (err) => {
           console.error('Error al enviar:', err);
@@ -38,6 +46,9 @@ export class NewuserComponent {
     } else {
       console.warn('Formulario inválido');
     }
-    console.log(this.inscription)
+
+
   }
+
+
 }

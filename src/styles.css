@@ -1,4 +1,137 @@
-.bodyroom1 {
-  height: 100vh;
-  background-color: rgb(59, 53, 53);
+.navbar .navbar-nav {
+  width: 100%;
+  justify-content: space-evenly;
 }
+.navbar .register ul {
+  display: flex;
+}
+.navbar .register ul li {
+  padding: 0 0.5rem;
+}
+
+.bodyhome {
+  padding: 0.25rem;
+  height: 100%;
+  width: 100%;
+}
+.bodyhome .sections {
+  height: 15rem;
+  background-color: rgb(162, 199, 204);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.bodyhome .sections .sec {
+  border: solid 0.1px;
+}
+.bodyhome .space {
+  padding: 2rem 0;
+  text-align: center;
+  max-width: 40rem;
+  margin: auto;
+  height: 15rem;
+}
+.bodyhome .space h2 {
+  color: rgb(69, 69, 228);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.bodyhome .imagesall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.bodyhome .imagesall .card {
+  overflow: hidden;
+  margin: auto;
+  max-width: 25rem;
+  width: 20rem;
+}
+.bodyhome .imagesall .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 18rem;
+}
+
+.bodyroom1 {
+  height: calc(100% - 6rem);
+  background-color: rgb(59, 53, 53);
+  padding: 2rem;
+}
+
+.userScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userScreen .centered {
+  max-width: 35rem;
+  position: relative;
+  padding: 1.25rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.userScreen .centered .content {
+  text-align: center;
+  text-wrap: balance;
+}
+.userScreen .centered .content .boxbig {
+  text-align: center;
+  text-wrap: balance;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  border-radius: var(--rounded_corners_radius_fatter);
+  border: solid hsl(from var(--neutral_1) h s l/0.15) 1px;
+  box-shadow: 0 5px 8px hsl(from var(--neutral_1) h s l/0.06);
+}
+.userScreen .centered .content .boxbig .content {
+  padding: 10px;
+  overflow: hidden;
+}
+.userScreen .centered .content .boxbig .content input {
+  width: 100%;
+  margin-bottom: 0.625rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.userScreen .centered .content .deleteUser {
+  border: solid 0.1rem;
+  padding: 1rem;
+}
+
+.proyectos .card {
+  width: 45rem;
+  margin: 2rem auto;
+  display: flex;
+  overflow: hidden;
+}
+.proyectos .card img {
+  height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #a2a2a2;
+}
+.proyectos .card .card-body {
+  text-align: center;
+  background-color: #e9fbfb;
+}
+.proyectos .card .datesproyect {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  padding: 3rem;
+  text-align: center;
+}
+.proyectos .card .datesproyect h5 {
+  color: rgb(180, 42, 7);
+}
+.proyectos .card .description {
+  padding: 1rem 3rem;
+  border: solid 0.01rem;
+  border-color: #e9fbfb;
+  border-top-color: #a2a2a2;
+  border-top: solid 0.01rem;
+}
+.proyectos .card li {
+  list-style: none;
+}/*# sourceMappingURL=styles.css.map */
