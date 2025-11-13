@@ -86,10 +86,14 @@
   border-radius: var(--rounded_corners_radius_fatter);
   border: solid hsl(from var(--neutral_1) h s l/0.15) 1px;
   box-shadow: 0 5px 8px hsl(from var(--neutral_1) h s l/0.06);
+  margin-top: 2rem;
 }
 .userScreen .centered .content .boxbig .content {
   padding: 10px;
   overflow: hidden;
+  border: solid 0.125rem;
+  /* equivale a 2px */
+  box-shadow: 0 0.3125rem 0.5rem hsl(0, 0%, 0%);
 }
 .userScreen .centered .content .boxbig .content input {
   width: 100%;
@@ -100,6 +104,10 @@
 .userScreen .centered .content .deleteUser {
   border: solid 0.1rem;
   padding: 1rem;
+  margin-top: 4rem;
+}
+.userScreen .centered .content .deleteUser .form-control {
+  padding: 0.75rem 0.75rem;
 }
 
 .proyectos .card {

@@ -35,7 +35,7 @@
         .sec {
             border: solid .1px;
             height: 18rem;
-    overflow: hidden;
+            overflow: hidden;
         }
     }
 
@@ -46,6 +46,7 @@
         margin: auto;
         height: 15rem;
         margin-top: 2rem;
+
         h2 {
             color: rgb(69, 69, 228);
             font-weight: 700;
@@ -108,10 +109,14 @@
                 border-radius: var(--rounded_corners_radius_fatter);
                 border: solid hsl(from var(--neutral_1) h s l / 0.15) 1px;
                 box-shadow: 0 5px 8px hsl(from var(--neutral_1) h s l / 0.06);
+                margin-top: 2rem;
 
                 .content {
                     padding: 10px;
                     overflow: hidden;
+                    border: solid 0.125rem;
+                    /* equivale a 2px */
+                    box-shadow: 0 0.3125rem 0.5rem hsl(0, 0%, 0%);
 
                     input {
                         width: 100%;
@@ -128,6 +133,11 @@
             .deleteUser {
                 border: solid .1rem;
                 padding: 1rem;
+                margin-top: 4rem;
+
+                .form-control {
+                    padding: .75rem .75rem;
+                }
             }
         }
     }
@@ -136,41 +146,48 @@
 
 //PROYECTOS
 
-.proyectos{
-    .card{
+.proyectos {
+    .card {
         width: 45rem;
         margin: 2rem auto;
         display: flex;
         overflow: hidden;
-        img{
+
+        img {
             height: 50vh;
             object-fit: contain;
             background-color: #a2a2a2;
         }
-        .card-body{
-            text-align: center;
-            background-color: #e9fbfb;;
-        }
-       .datesproyect{
 
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5rem;
-        padding: 3rem;
-        text-align: center;
-        h5{
-            color: rgb(180, 42, 7);
+        .card-body {
+            text-align: center;
+            background-color: #e9fbfb;
+            ;
         }
-       }
-       .description{
-        padding: 1rem 3rem;
-        border: solid .01rem ;
-        border-color: #e9fbfb;
-        border-top-color: #a2a2a2;
-        border-top:solid .01rem;
-       }
-       li{
-        list-style: none;
-       }
+
+        .datesproyect {
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+            padding: 3rem;
+            text-align: center;
+
+            h5 {
+                color: rgb(180, 42, 7);
+            }
+        }
+
+        .description {
+            padding: 1rem 3rem;
+            border: solid .01rem;
+            border-color: #e9fbfb;
+            border-top-color: #a2a2a2;
+            border-top: solid .01rem;
+        }
+
+        li {
+            list-style: none;
+        }
     }
 }
