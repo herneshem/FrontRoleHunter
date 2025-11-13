@@ -5,7 +5,7 @@
 				<div class="content">
 
 
-					 <form action="" [formGroup]="formu" (ngSubmit)="handleSend()">
+					<form action="" [formGroup]="formu" (ngSubmit)="handleSend()">
 						<div class="form-control">
 							<label for="nombre">Nombre</label>
 							<input type="text" id="name" formControlName="nombre">
@@ -14,12 +14,12 @@
 							<label for="password">Password</label>
 							<input type="password" id="password" formControlName="password">
 						</div>
-					
+
 						<div>
 							<button>Send</button>
 						</div>
-					</form> 
-				
+					</form>
+
 				</div>
 			</div>
 
@@ -42,17 +42,20 @@
 
 			<div class="deleteUser" id="deleteUser">
 				<form [formGroup]="deleteForm" (ngSubmit)="deleteUser()">
-				<h2>Eliminar usuario</h2>
-				<div class="form-control">
-					 <label for="nombre">Identifícate</label>
-					<input type="text" id="nombre" formControlName="nombre"> 
-					<label for="id_Usuario">Id secreto</label>
-					<input type="text" id="id_Usuario" formControlName="id_Usuario">
-				</div>
-				<button type="submit">Eliminar</button>
-			</form>
+					<h2>Eliminar usuario</h2>
+					<div class="form-control">
+						<label for="nombre">Identifícate</label>
+						<input type="text" id="nombre" formControlName="nombre">
+
+					</div>
+					<div class="form-control">
+						<label for="id_Usuario">Id secreto</label>
+						<input type="text" id="id_Usuario" formControlName="id_Usuario">
+					</div>
+					<button type="submit">Eliminar</button>
+				</form>
 			</div>
-			
+
 		</div>
 	</div>
 </div>

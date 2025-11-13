@@ -15,13 +15,15 @@
   width: 100%;
 }
 .bodyhome .sections {
-  height: 15rem;
+  height: 18rem;
   background-color: rgb(162, 199, 204);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .bodyhome .sections .sec {
   border: solid 0.1px;
+  height: 18rem;
+  overflow: hidden;
 }
 .bodyhome .space {
   padding: 2rem 0;
@@ -29,6 +31,7 @@
   max-width: 40rem;
   margin: auto;
   height: 15rem;
+  margin-top: 2rem;
 }
 .bodyhome .space h2 {
   color: rgb(69, 69, 228);
