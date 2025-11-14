@@ -88,6 +88,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #0A1A2F;
 
     .centered {
         max-width: 35rem;
@@ -105,18 +106,21 @@
                 text-wrap: balance;
                 overflow: hidden;
                 position: relative;
-                background: #fff;
                 border-radius: var(--rounded_corners_radius_fatter);
                 border: solid hsl(from var(--neutral_1) h s l / 0.15) 1px;
                 box-shadow: 0 5px 8px hsl(from var(--neutral_1) h s l / 0.06);
                 margin-top: 2rem;
 
+
+
                 .content {
                     padding: 10px;
                     overflow: hidden;
-                    border: solid 0.125rem;
-                    /* equivale a 2px */
+                    border: solid 0.25rem;
                     box-shadow: 0 0.3125rem 0.5rem hsl(0, 0%, 0%);
+                    border: solid 0.4rem gray;
+                    border-radius: 1rem;
+                    background-color: #cedce7;
 
                     input {
                         width: 100%;
@@ -131,9 +135,11 @@
             }
 
             .deleteUser {
-                border: solid .1rem;
+                border: solid 0.4rem gray;
                 padding: 1rem;
                 margin-top: 4rem;
+                background-color: #cedce7;
+                border-radius: 1rem;
 
                 .form-control {
                     padding: .75rem .75rem;
@@ -147,11 +153,16 @@
 //PROYECTOS
 
 .proyectos {
+    padding: 2rem 0;
+    background-color: #0A1A2F;
+    width: 100%;
     .card {
         width: 45rem;
         margin: 2rem auto;
         display: flex;
         overflow: hidden;
+        border-radius: 1rem;
+        border: solid 0.4rem gray;
 
         img {
             height: 50vh;
@@ -161,8 +172,7 @@
 
         .card-body {
             text-align: center;
-            background-color: #e9fbfb;
-            ;
+            background-color: #accfcf;
         }
 
         .datesproyect {
