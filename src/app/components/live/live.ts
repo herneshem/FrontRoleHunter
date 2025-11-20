@@ -22,7 +22,7 @@ export class Live implements OnInit {
   async initLocalMedia() {
     try {
       this.localStream = await navigator.mediaDevices.getUserMedia({
-        video: true,
+        video: { facingMode: 'user' },
         audio: true
       });
 
