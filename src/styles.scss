@@ -1,19 +1,38 @@
 //MENU
 .navbar {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
     .navbar-nav {
         width: 100%;
         justify-content: space-evenly;
+        flex-direction: column;
+        height: 100vh;
+        width: 10rem;
+        text-align: center;
+
     }
 
     .register {
 
         ul {
             display: flex;
+            list-style: none;
 
             li {
                 padding: 0 .5rem;
+
+                a {
+                    text-decoration: none;
+                }
             }
         }
+    }
+
+    .secondmenu {
+        position: absolute;
     }
 }
 
@@ -24,7 +43,8 @@
 .bodyhome {
     padding: .25rem;
     height: 100%;
-    width: 100%;
+    margin-left: 10rem;
+
 
     .sections {
         height: 18rem;
@@ -74,11 +94,21 @@
     }
 }
 
+
+//LIVE
+.live {
+    padding: .25rem;
+    height: 100%;
+    margin-left: 10rem;
+}
+
 //ACTOR
 .bodyroom1 {
     height: calc(100% - 6rem);
     background-color: rgb(59, 53, 53);
-    padding: 2rem;
+    padding: 5rem 2rem;
+    margin-left: 10rem;
+
 
 }
 
@@ -89,6 +119,7 @@
     align-items: center;
     justify-content: center;
     background-color: #0A1A2F;
+    padding: 5rem 0;
 
     .centered {
         max-width: 35rem;
@@ -153,9 +184,10 @@
 //PROYECTOS
 
 .proyectos {
-    padding: 2rem 0;
+    padding: 10rem 0;
     background-color: #0A1A2F;
-    width: 100%;
+    margin-left: 10rem;
+
     .card {
         width: 45rem;
         margin: 2rem auto;

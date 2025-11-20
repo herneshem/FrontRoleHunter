@@ -1,29 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['home']">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+   
+    <div class="register">
+        <ul>
+          <li><a [routerLink]="['/newuser']">Registrarse</a></li>
+          <li><a [routerLink]="['/user']">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+  </div>
+
+   <div class="collapse navbar-collapse secondmenu" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" [routerLink]="['/proyect']">Proyectos</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/live']">Live</a>
+        <a class="nav-link" [routerLink]="['/proyect']">Proyectos</a>
         <a class="nav-link" [routerLink]="['/actor']">Actores</a>
         <a class="nav-link" href="#">Directores</a>
         <a class="nav-link" href="#">Mecenas</a>
 
-        <div class="register">
-          <ul>
-            <li><a [routerLink]="['/newuser']">Registrarse</a></li>
-            <li><a [routerLink]="['/user']">Iniciar Sesión</a></li>
-          </ul>
-        </div>
+
       </div>
 
-
+     
     </div>
-  </div>
-
 </nav>
 
 <router-outlet />

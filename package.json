@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "sass:watch": "sass --watch src/styles.scss:src/styles.css --no-source-map",
-  "start:dev": "concurrently \"ng serve\" \"sass --watch src/styles.scss:src/styles.css --no-source-map\""
+    "start:dev": "concurrently \"ng serve\" \"sass --watch src/styles.scss:src/styles.css --no-source-map\""
   },
   "prettier": {
     "printWidth": 100,
@@ -33,8 +33,10 @@
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@popperjs/core": "^2.11.8",
+    "@stomp/stompjs": "^7.2.1",
     "bootstrap": "^5.3.8",
     "rxjs": "~7.8.0",
+    "sockjs-client": "^1.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

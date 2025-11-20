@@ -40,6 +40,7 @@ export class NewuserComponent {
 
         },
         error: (err) => {
+          alert("Backend no conectado")
           console.error('Error al enviar:', err);
         }
       });

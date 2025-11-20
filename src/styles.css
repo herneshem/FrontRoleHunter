@@ -1,18 +1,35 @@
+.navbar {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
 .navbar .navbar-nav {
   width: 100%;
   justify-content: space-evenly;
+  flex-direction: column;
+  height: 100vh;
+  width: 10rem;
+  text-align: center;
 }
 .navbar .register ul {
   display: flex;
+  list-style: none;
 }
 .navbar .register ul li {
   padding: 0 0.5rem;
+}
+.navbar .register ul li a {
+  text-decoration: none;
+}
+.navbar .secondmenu {
+  position: absolute;
 }
 
 .bodyhome {
   padding: 0.25rem;
   height: 100%;
-  width: 100%;
+  margin-left: 10rem;
 }
 .bodyhome .sections {
   height: 18rem;
@@ -55,16 +72,25 @@
   height: 18rem;
 }
 
+.live {
+  padding: 0.25rem;
+  height: 100%;
+  margin-left: 10rem;
+}
+
 .bodyroom1 {
   height: calc(100% - 6rem);
   background-color: rgb(59, 53, 53);
-  padding: 2rem;
+  padding: 5rem 2rem;
+  margin-left: 10rem;
 }
 
 .userScreen {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #0A1A2F;
+  padding: 5rem 0;
 }
 .userScreen .centered {
   max-width: 35rem;
@@ -82,7 +108,6 @@
   text-wrap: balance;
   overflow: hidden;
   position: relative;
-  background: #fff;
   border-radius: var(--rounded_corners_radius_fatter);
   border: solid hsl(from var(--neutral_1) h s l/0.15) 1px;
   box-shadow: 0 5px 8px hsl(from var(--neutral_1) h s l/0.06);
@@ -91,9 +116,11 @@
 .userScreen .centered .content .boxbig .content {
   padding: 10px;
   overflow: hidden;
-  border: solid 0.125rem;
-  /* equivale a 2px */
+  border: solid 0.25rem;
   box-shadow: 0 0.3125rem 0.5rem hsl(0, 0%, 0%);
+  border: solid 0.4rem gray;
+  border-radius: 1rem;
+  background-color: #cedce7;
 }
 .userScreen .centered .content .boxbig .content input {
   width: 100%;
@@ -102,19 +129,28 @@
   border-radius: 0.5rem;
 }
 .userScreen .centered .content .deleteUser {
-  border: solid 0.1rem;
+  border: solid 0.4rem gray;
   padding: 1rem;
   margin-top: 4rem;
+  background-color: #cedce7;
+  border-radius: 1rem;
 }
 .userScreen .centered .content .deleteUser .form-control {
   padding: 0.75rem 0.75rem;
 }
 
+.proyectos {
+  padding: 10rem 0;
+  background-color: #0A1A2F;
+  margin-left: 10rem;
+}
 .proyectos .card {
   width: 45rem;
   margin: 2rem auto;
   display: flex;
   overflow: hidden;
+  border-radius: 1rem;
+  border: solid 0.4rem gray;
 }
 .proyectos .card img {
   height: 50vh;
@@ -124,7 +160,7 @@
 }
 .proyectos .card .card-body {
   text-align: center;
-  background-color: #e9fbfb;
+  background-color: #accfcf;
 }
 .proyectos .card .datesproyect {
   display: grid;
