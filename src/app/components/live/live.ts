@@ -1,105 +1,87 @@
 import { Component, OnInit } from '@angular/core';
-import { WsService } from '../../services/ws-service';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-live',
   templateUrl: './live.html',
-   styles: ``
+  styles: ``
 })
 export class Live implements OnInit {
 
-  peer!: RTCPeerConnection;
-  roomId = 'sala-1';
-  localStream?: MediaStream;
+  peerA!: RTCPeerConnection;
+  peerB!: RTCPeerConnection;
+  localStream!: MediaStream;
 
-  // Subject para pruebas sin WebSocket
-  signalBus = new Subject<any>();
-
-  constructor(private ws: WsService) { }
+  constructor() { }
 
   async ngOnInit() {
     await this.initLocalMedia();
-    this.initWebSocket();
-    this.createPeer();
-
-    // Suscripción a signalBus para pruebas locales (sin backend)
-    this.signalBus.subscribe(msg => this.handleSignal(msg));
+    this.createPeers();
   }
 
+  // Obtener cámara y micrófono
   async initLocalMedia() {
-    this.localStream = await navigator.mediaDevices.getUserMedia({
-      video: true,
-      audio: true
-    });
-    const video = document.getElementById("localVideo") as HTMLVideoElement;
-    if (video) video.srcObject = this.localStream;
-  }
-
-  createPeer() {
-    this.peer = new RTCPeerConnection({
-      iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
-    });
-
-    this.peer.onicecandidate = (event) => {
-      if (event.candidate) {
-        this.ws.send(this.roomId, { type: 'candidate', candidate: event.candidate });
-      }
-    };
-
-    this.peer.ontrack = (event) => {
-      const remoteVideo = document.createElement('video');
-      remoteVideo.autoplay = true;
-      remoteVideo.srcObject = event.streams[0];
-      document.getElementById("remoteVideos")?.appendChild(remoteVideo);
-    };
-
-    this.localStream?.getTracks().forEach(track => this.peer.addTrack(track, this.localStream!));
-  }
-
-  initWebSocket() {
-    this.ws.connect(this.roomId, async (msg: any) => {
-      await this.handleSignal(msg);
-    });
-  }
-
-  async startCall() {
-    const offer = await this.peer.createOffer();
-    await this.peer.setLocalDescription(offer);
-
-    this.ws.send(this.roomId, { type: 'offer', sdp: offer.sdp });
-
-    // Para pruebas sin backend:
-    // this.signalBus.next({ type: 'offer', sdp: offer.sdp });
-  }
-
-  async handleSignal(msg: any) {
-    if (msg.type === 'offer') await this.handleOffer(msg);
-    if (msg.type === 'answer') await this.handleAnswer(msg);
-    if (msg.type === 'candidate') await this.handleCandidate(msg);
-  }
-
-  async handleOffer(msg: any) {
-    await this.peer.setRemoteDescription({ type: 'offer', sdp: msg.sdp });
-
-    const answer = await this.peer.createAnswer();
-    await this.peer.setLocalDescription(answer);
-
-    this.ws.send(this.roomId, { type: 'answer', sdp: answer.sdp });
-
-    // Para pruebas sin backend:
-    // this.signalBus.next({ type: 'answer', sdp: answer.sdp });
-  }
-
-  async handleAnswer(msg: any) {
-    await this.peer.setRemoteDescription({ type: 'answer', sdp: msg.sdp });
-  }
-
-  async handleCandidate(msg: any) {
     try {
-      await this.peer.addIceCandidate(msg.candidate);
-    } catch (e) {
-      console.error("Error ICE:", e);
+      this.localStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true
+      });
+
+      const localVideo = document.getElementById('localVideo') as HTMLVideoElement;
+      if (localVideo) localVideo.srcObject = this.localStream;
+
+      console.log('Local media ready:', this.localStream);
+    } catch (err) {
+      console.error('Error accediendo a cámara/micrófono:', err);
+      alert('Por favor habilita el acceso a cámara y micrófono.');
+    }
+  }
+
+  // Crear dos peers
+  createPeers() {
+    this.peerA = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+    this.peerB = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+
+    // Agregar tracks locales a peerA
+    if (this.localStream) {
+      this.localStream.getTracks().forEach(track => this.peerA.addTrack(track, this.localStream));
+    }
+
+    // ICE candidates
+    this.peerA.onicecandidate = event => {
+      if (event.candidate) this.peerB.addIceCandidate(event.candidate);
+    };
+    this.peerB.onicecandidate = event => {
+      if (event.candidate) this.peerA.addIceCandidate(event.candidate);
+    };
+
+    // Recibir tracks remotos en peerB
+    this.peerB.ontrack = event => {
+      console.log('PeerB ontrack', event.streams);
+      const remoteVideo = document.getElementById('remoteVideo') as HTMLVideoElement;
+      if (remoteVideo) remoteVideo.srcObject = event.streams[0];
+    };
+  }
+
+  // Iniciar llamada local
+  async startCall() {
+    if (!this.peerA || !this.peerB) return;
+
+    try {
+      // Crear oferta en peerA
+      const offer = await this.peerA.createOffer();
+      await this.peerA.setLocalDescription(offer);
+
+      // peerB recibe oferta y crea respuesta
+      await this.peerB.setRemoteDescription(offer);
+      const answer = await this.peerB.createAnswer();
+      await this.peerB.setLocalDescription(answer);
+
+      // peerA recibe respuesta
+      await this.peerA.setRemoteDescription(answer);
+
+      console.log('Llamada local establecida correctamente');
+    } catch (err) {
+      console.error('Error iniciando llamada local:', err);
     }
   }
 

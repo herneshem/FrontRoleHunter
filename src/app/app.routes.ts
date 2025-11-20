@@ -7,6 +7,7 @@ import { Home } from './components/home/home';
 import { Proyect } from './components/proyect/proyect';
 import { Live } from './components/live/live';
 
+
 export const routes: Routes = [
   { path: '', redirectTo: 'user', pathMatch: 'full' },
 
