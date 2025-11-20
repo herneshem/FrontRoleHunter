@@ -16,5 +16,6 @@ import { Sala1 } from './components/sala1/sala1';
 export class App {
   protected readonly title = signal('face');
 
+  menuOpen = false;
  
 }

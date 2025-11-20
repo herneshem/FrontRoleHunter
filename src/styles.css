@@ -181,4 +181,11 @@
 }
 .proyectos .card li {
   list-style: none;
+}
+
+@media (max-width: 768px) {
+  .collapse.show {
+    display: flex; /* mostrar al abrir */
+    flex-direction: column; /* apilar enlaces verticalmente */
+  }
 }/*# sourceMappingURL=styles.css.map */
