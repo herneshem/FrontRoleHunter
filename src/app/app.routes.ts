@@ -9,7 +9,7 @@ import { Live } from './components/live/live';
 
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'user', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   { path: 'home', component: Home },
 

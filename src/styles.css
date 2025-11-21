@@ -183,9 +183,35 @@
   list-style: none;
 }
 
+app-root:has(app-usercomponent) .navbar .secondmenu {
+  display: none !important;
+}
+
+app-root:has(app-newuser) .navbar .secondmenu {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
+  app-root .bodyhome, .proyectos, .live, .bodyroom1 {
+    margin: 0;
+  }
+  app-root:has(app-proyect) .navbar .secondmenu.collapse.show {
+    z-index: 1;
+    position: relative;
+  }
   .collapse.show {
-    display: flex; /* mostrar al abrir */
-    flex-direction: column; /* apilar enlaces verticalmente */
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar .secondmenu {
+    width: 100%;
+    background-color: #0A1A2F;
+    color: white;
+  }
+  .navbar .secondmenu .navbar-nav .nav-link {
+    color: white;
+  }
+  .proyectos .card {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */

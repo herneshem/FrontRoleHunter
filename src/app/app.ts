@@ -17,5 +17,6 @@ export class App {
   protected readonly title = signal('face');
 
   menuOpen = false;
+  menuOpenmovil= false
  
 }
