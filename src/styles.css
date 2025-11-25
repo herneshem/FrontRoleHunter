@@ -225,4 +225,31 @@ app-root:has(app-newuser) .navbar .secondmenu {
     display: flex;
     flex-direction: column;
   }
+  .mat-grid-list {
+    height: 100vh;
+  }
+  .mat-grid-list .mat-grid-tile {
+    width: 100% !important;
+    position: relative;
+    left: 0 !important;
+    margin: 0 auto !important;
+  }
+  .mat-grid-list .mat-grid-tile .mat-grid-tile-content img {
+    height: 100%;
+    overflow: hidden;
+    -o-object-fit: contain;
+       object-fit: contain;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+  }
+  .mat-grid-list .mat-grid-tile:nth-child(1) {
+    height: 15rem;
+  }
+  .mat-grid-list .mat-grid-tile:nth-child(2) {
+    height: 12rem;
+  }
+  .mat-grid-list .mat-grid-tile:nth-child(3),
+  .mat-grid-list .mat-grid-tile:nth-child(4) {
+    height: 5rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -26,6 +26,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "src/app/videos",
+                "output": "assets/videos"
+              },
+              {
+                "glob": "**/*",
                 "input": "public",
                 "output": "/"
               }

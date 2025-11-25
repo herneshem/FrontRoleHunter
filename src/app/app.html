@@ -14,10 +14,10 @@
   </div>
 
    <div class="collapse navbar-collapse secondmenu" [class.show]="menuOpen" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <div class="navbar-nav" (click)="menuOpen= false" >
         <a class="nav-link active" aria-current="page" [routerLink]="['/live']">Live</a>
-        <a class="nav-link" [routerLink]="['/proyect']">Proyectos</a>
-        <a class="nav-link" [routerLink]="['/actor']">Actores</a>
+        <a class="nav-link" [routerLink]="['/proyect']" >Proyectos</a>
+        <a class="nav-link" [routerLink]="['/actor']" >Actores</a>
         <a class="nav-link" href="#">Directores</a>
         <a class="nav-link" href="#">Mecenas</a>
 

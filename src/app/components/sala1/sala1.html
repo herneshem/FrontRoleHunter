@@ -4,8 +4,25 @@
     <mat-grid-tile
       [colspan]="tile.cols"
       [rowspan]="tile.rows"
-      [style.background]="tile.color">{{tile.text}}</mat-grid-tile>
+      [style.background]="tile.color">
+
+        @if (tile.video) {
+        <video autoplay muted loop class="bg-video">
+          <source src="assets/videos/pru1.mp4" type="video/mp4">
+        </video>
+      }@else if (tile.img) {
+          <img src="assets/images/sam.jpeg"  alt="...">
+     
+      }@else {
+        {{ tile.text }}
+      }
+
+       
+    </mat-grid-tile>
+      
+    
   }
+  
 </mat-grid-list>
 </div>
 

@@ -235,6 +235,8 @@
     }
 }
 
+
+
 app-root:has(app-usercomponent) .navbar .secondmenu {
     display: none !important;
 }
@@ -264,7 +266,7 @@ app-root:has(app-newuser) .navbar .secondmenu {
 
     }
 
-
+    //menu
     .navbar .secondmenu {
         width: 100%;
         background-color: #0A1A2F;
@@ -275,17 +277,19 @@ app-root:has(app-newuser) .navbar .secondmenu {
         }
     }
 
+    //body principal
     .bodyhome .imagesall {
         display: flex;
         flex-direction: column;
     }
 
+    // página proyectos    
     .proyectos {
 
         .card {
             width: 100%;
 
-          .datesproyect {
+            .datesproyect {
                 display: flex;
                 flex-direction: column;
             }
@@ -293,4 +297,40 @@ app-root:has(app-newuser) .navbar .secondmenu {
         }
     }
 
+    //páginas de salas
+     .mat-grid-list {
+         height: 100vh;
+       
+
+        .mat-grid-tile {
+            
+              width: 100% !important;
+              position: relative;
+              left: 0 !important;
+              margin: 0 auto !important;
+              .mat-grid-tile-content{
+                img{
+                    height: 100%;
+                    overflow: hidden;
+                    object-fit: contain;
+                    padding: .5rem 0;
+                    border-radius: 1rem;
+                }
+              }
+              
+        }
+        .mat-grid-tile:nth-child(1)  {
+           height: 15rem;
+           
+        }
+        .mat-grid-tile:nth-child(2)  {
+           height: 12rem;
+        }
+        .mat-grid-tile:nth-child(3),
+        .mat-grid-tile:nth-child(4)
+        {
+           height: 5rem;
+        }
+
+    }
 }

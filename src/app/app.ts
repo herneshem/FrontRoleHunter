@@ -8,15 +8,17 @@ import { Sala1 } from './components/sala1/sala1';
 
 @Component({
   selector: 'app-root',
-  standalone:true,
+  standalone: true,
   imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
-  styleUrls: ['../styles.css'] 
+  styleUrls: ['../styles.css']
 })
 export class App {
   protected readonly title = signal('face');
 
   menuOpen = false;
-  menuOpenmovil= false
- 
+  menuOpenmovil = false;
+
+
+
 }
